@@ -6,7 +6,7 @@ from PIL import Image
 
 
 # Set the app title and logo
-st.title("Faculty Report Application")
+st.title("INSOFE Faculty Report Application")
 
 # File uploader widget
 file = st.file_uploader("Upload a file", type=["csv", "xlsx"])
