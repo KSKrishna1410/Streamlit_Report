@@ -13,7 +13,7 @@ file = st.file_uploader("Upload a file", type=["csv", "xlsx"])
 
 if file is not None:
     file_extension = file.name.split(".")[-1]
-    
+    file_name = file.name
     # Load the dataset into a Pandas DataFrame
     if file_extension == "csv":
         df = pd.read_csv(file)
@@ -26,7 +26,7 @@ if file is not None:
     # Display the processed dataset in the app
     st.write(df_processed)
     # Add a button to download the processed dataset as Excel
-    excel_file = df_processed.to_excel(index=True, engine='openpyxl')
+    excel_file = df_processed.to_excel(file_name,index=True, engine='openpyxl')
     b64 = base64.b64encode(excel_file).decode()
     href = f'<a href="data:application/octet-stream;base64,{b64}" download="processed_data.xlsx">Download processed data</a>'
     st.markdown(href, unsafe_allow_html=True)
