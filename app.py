@@ -1,4 +1,4 @@
-!pip install openpyxl
+pip install -r requirements.txt
 import streamlit as st
 import pandas as pd
 from preprocess import preprocess_data
