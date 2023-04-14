@@ -31,5 +31,5 @@ if file is not None:
     with open("processed_data.xlsx", "rb") as f:
         bytes = f.read()
         b64 = base64.b64encode(bytes).decode()
-        href = f'<a href="data:application/octet-stream;base64,{b64}" download="processed_data.xlsx">Download processed data</a>'
+        href = f'<a href="data:application/octet-stream;base64,{b64}" download="processed_data.xlsx">Download Final Report</a>'
         st.markdown(href, unsafe_allow_html=True)
