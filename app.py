@@ -3,7 +3,8 @@ import pandas as pd
 from preprocess import preprocess_data
 import base64
 from PIL import Image
-
+pip install openpyxl
+import openpyxl
 
 # Set the app title and logo
 st.title("INSOFE Faculty Report Application")
