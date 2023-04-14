@@ -25,11 +25,8 @@ if file is not None:
     
     # Display the processed dataset in the app
     st.write(df_processed)
-    
     # Add a button to download the processed dataset as Excel
-    excel = df_processed.to_excel("processed_data.xlsx", index=True, engine='openpyxl')
-    with open("processed_data.xlsx", "rb") as f:
-        bytes = f.read()
-        b64 = base64.b64encode(bytes).decode()
-        href = f'<a href="data:application/octet-stream;base64,{b64}" download="processed_data.xlsx">Download Final Report</a>'
-        st.markdown(href, unsafe_allow_html=True)
+    excel_file = df_processed.to_excel(index=True, engine='openpyxl')
+    b64 = base64.b64encode(excel_file).decode()
+    href = f'<a href="data:application/octet-stream;base64,{b64}" download="processed_data.xlsx">Download processed data</a>'
+    st.markdown(href, unsafe_allow_html=True)
